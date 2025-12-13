@@ -20,7 +20,8 @@
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 40px;
+            /* REDUCED PADDING */
+            padding: 20px; 
             background-color: var(--light-bg);
             color: var(--dark-text);
         }
@@ -28,16 +29,17 @@
         h1 {
             text-align: center;
             margin-bottom: 5px;
-            font-size: 24px;
+            font-size: 22px; /* Slightly smaller title */
         }
 
         h2 {
             text-align: center;
             margin-top: 0;
-            margin-bottom: 40px;
+            /* REDUCED MARGIN */
+            margin-bottom: 20px; 
             font-weight: 400;
             color: #666;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         /* Main Chart Container */
@@ -46,7 +48,8 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            height: 550px; 
+            /* SIGNIFICANTLY REDUCED HEIGHT (was 550px) */
+            height: 380px; 
             box-sizing: border-box;
         }
 
@@ -54,8 +57,10 @@
         .connector-layer {
             display: block; 
             position: absolute;
-            top: 60px; 
-            height: calc(100% - 120px); 
+            /* REDUCED TOP to match new bar height */
+            top: 40px; 
+            /* Height = Total - (Top Bar 40px + Bottom Bar 40px) */
+            height: calc(100% - 80px); 
             left: 0;
             width: 100%;
             z-index: 1; 
@@ -66,7 +71,8 @@
             display: flex;
             position: absolute;
             width: 100%;
-            height: 60px;
+            /* REDUCED HEIGHT (was 60px) */
+            height: 40px; 
             z-index: 10; 
             background: transparent; 
         }
@@ -86,11 +92,11 @@
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 12px;
+            font-size: 11px; /* Slightly smaller font for narrower bars */
             font-weight: bold;
             text-align: center;
             border-right: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -98,49 +104,41 @@
         }
         
         .phase.narrow {
-            font-size: 10px;
+            font-size: 9px;
         }
 
         .phase span.weeks {
             font-weight: normal;
-            font-size: 10px;
+            font-size: 9px;
             opacity: 0.9;
         }
 
         /* Label Layer for Text inside Trapezoids */
         .label-layer {
             position: absolute;
-            top: 60px;
-            height: calc(100% - 120px);
+            top: 40px; /* Match new bar height */
+            height: calc(100% - 80px);
             left: 0;
             width: 100%;
             z-index: 5; 
             pointer-events: none;
         }
 
-        /* UPDATED STYLING FOR COMPACT BOXES */
+        /* Compact Box Styling */
         .mechanism-label {
             position: absolute;
             transform: translate(-50%, -50%);
             text-align: center;
             background: rgba(255,255,255,0.95);
-            
-            /* TIGHTER PADDING */
             padding: 3px 6px;
-            
             border-radius: 4px;
-            
-            /* SMALLER FONT & TIGHTER LEADING */
             font-size: 10.5px; 
             line-height: 1.2;
-            
             box-shadow: 0 1px 2px rgba(0,0,0,0.15);
             border: 1px solid #d0d0d0;
-            white-space: normal; /* Allow wrapping */
-            
-            /* Ensure box doesn't expand unnecessarily */
+            white-space: normal;
             width: max-content;
-            max-width: 200px; /* Cap width but allow shrinking */
+            max-width: 200px;
         }
         
         .mechanism-label strong {
@@ -153,15 +151,15 @@
         /* Time Axis */
         .axis {
             position: absolute;
-            bottom: -30px;
+            bottom: -25px; /* Moved up slightly */
             left: 0;
             width: 100%;
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
+            font-size: 11px;
             color: #666;
             border-top: 1px solid #ccc;
-            padding-top: 5px;
+            padding-top: 4px;
         }
 
         /* Side Labels */
@@ -171,13 +169,14 @@
             width: 120px;
             text-align: right;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.2;
         }
         .row-label small {
             display: block;
             font-weight: normal;
             color: #666;
+            font-size: 11px;
         }
 
     </style>
@@ -189,11 +188,11 @@
 
     <div class="chart-wrapper">
         
-        <div class="row-label" style="top: 10px;">
+        <div class="row-label" style="top: 2px;">
             Baseline Schedule
             <small>80 Weeks</small>
         </div>
-        <div class="row-label" style="bottom: 10px;">
+        <div class="row-label" style="bottom: 2px;">
             Target Schedule
             <small>40 Weeks</small>
         </div>
@@ -227,7 +226,7 @@
                 (Robotic automation vs. manual tape)
             </div>
 
-            <div class="mechanism-label" style="top: 22%; left: 53%; max-width: 180px;">
+            <div class="mechanism-label" style="top: 20%; left: 53%; max-width: 180px;">
                 <strong>Parallelization (-12w)</strong>
                 (Build-Ahead of surrounding systems around critical path items)
             </div>
@@ -235,7 +234,7 @@
                 <strong>Reduced Congestion (-8w)</strong>
                 (Zonal work, Better flow, No stacking)
             </div>
-            <div class="mechanism-label" style="top: 78%; left: 45%; max-width: 150px;">
+            <div class="mechanism-label" style="top: 80%; left: 45%; max-width: 150px;">
                 <strong>Rework Reduction (-6w)</strong>
                 (No tear-out-and-fix time)
             </div>

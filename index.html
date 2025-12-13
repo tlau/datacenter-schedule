@@ -139,12 +139,12 @@
             { id: "turnover", val: 4 }
         ],
         waterfall: [
-            { label: "VDC Investment", val: 3, type: "increase", impact: "pre_construction", desc: "Added time for model coordination" },
-            { label: "Layout Speed", val: -12, type: "decrease", impact: "interior_layout", desc: "Robotic automation speed" },
-            { label: "Parallelization", val: -12, type: "decrease", impact: "mep_rough_in", desc: "Overlapping MEP with Layout" },
-            { label: "Reduced Congestion", val: -8, type: "decrease", impact: "mep_rough_in", desc: "Better flow, less stacking" },
-            { label: "Rework Reduction", val: -6, type: "decrease", impact: "mep_rough_in", desc: "Avoiding critical path fixes" },
-            { label: "Commissioning De-Risking", val: -5, type: "decrease", impact: "commissioning", desc: "Verification instead of troubleshooting" }
+            { label: "VDC Investment", val: 3, type: "increase", impact: "pre_construction", desc: "We voluntarily add time here to perfect the model, preventing delays later." },
+            { label: "Layout Speed", val: -12, type: "decrease", impact: "interior_layout", desc: "Layout speed + multi-trade parallelization: installation can start immediately following the robot instead of having to wait for each trade sequentially to lay out the entire floor." },
+            { label: "Parallelization", val: -12, type: "decrease", impact: "mep_rough_in", desc: "Build-Ahead of surrounding systems around critical path items enables parallelization. Equipment delays don't hold up the schedule." },
+            { label: "Reduced Congestion", val: -8, type: "decrease", impact: "mep_rough_in", desc: "Better flow: trades work in zones without stacking, speeding up install." },
+            { label: "Rework Reduction", val: -6, type: "decrease", impact: "mep_rough_in", desc: "Removes the hidden 'tear-out-and-fix' time embedded in the install phase." },
+            { label: "Commissioning De-Risking", val: -5, type: "decrease", impact: "commissioning", desc: "Transforms Commissioning from troubleshooting errors to simple verification." }
         ]
     };
 
