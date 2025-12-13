@@ -39,8 +39,11 @@
 
     <div class="w-full max-w-6xl">
         <header class="mb-6 md:mb-10 text-center mt-4 md:mt-0">
-            <h1 class="text-2xl md:text-4xl font-bold text-slate-900 mb-2 md:mb-3 tracking-tight">Mechanisms of Schedule Compression</h1>
-            <p class="text-slate-500 text-sm md:text-xl px-4">How Dusty Robotics Enables Parallelization and De-Risking</p>
+            <!-- LOGO ADDED HERE -->
+            <img src="https://cdn.prod.website-files.com/64d2bbdae796ca9291a4c909/64d2bbdae796ca9291a4c948_dusty-logo-dark.svg" alt="Dusty Robotics Logo" class="mx-auto h-8 mb-4">
+
+            <h1 class="text-2xl md:text-4xl font-bold text-slate-900 mb-2 md:mb-3 tracking-tight">Build Data Centers Faster with Dusty</h1>
+            <p class="text-slate-500 text-sm md:text-xl px-4">Automated multi-trade layout cuts construction time in half</p>
         </header>
 
         <!-- Insight Box (Moved to Top) -->
@@ -51,12 +54,21 @@
                     Analysis: The "Shift Left" Effect
                 </h3>
                 <p class="text-blue-800 text-xs md:text-sm leading-relaxed">
-                    Hover over the green waterfall bars. Notice how <span class="font-bold">MEP Rough-In</span> (Light Blue) and <span class="font-bold">Interior Layout</span> (Orange) compress dramatically in the Target stack, while <span class="font-bold">Pre-Construction</span> (Light Grey) actually grows slightly to accommodate the VDC investment.
+                    Hover over the green waterfall bars. Notice how <span class="font-bold">Interior Layout</span> (Orange) and <span class="font-bold">MEP Rough-In</span> (Light Blue) compress dramatically in the Target stack, while <span class="font-bold">Pre-Construction</span> (Light Grey) actually grows slightly to accommodate the VDC investment.
                 </p>
             </div>
              <div class="bg-slate-100 border border-slate-200 p-5 rounded-xl flex flex-col justify-center items-center text-center">
-                <span class="text-3xl font-bold text-emerald-600 mb-1">-50%</span>
-                <span class="text-slate-600 text-sm font-medium">Schedule Reduction</span>
+                <!-- 100MW Metric -->
+                <div class="mb-4">
+                    <span class="text-3xl font-bold text-emerald-600">100MW</span>
+                    <div class="text-slate-600 text-sm font-medium leading-tight">hyperscale data center</div>
+                </div>
+
+                <!-- -50% Metric -->
+                <div>
+                    <span class="text-3xl font-bold text-emerald-600">-50%</span>
+                    <div class="text-slate-600 text-sm font-medium leading-tight">schedule reduction</div>
+                </div>
             </div>
         </div>
 
@@ -138,13 +150,27 @@
             { id: "commissioning", val: 3 },
             { id: "turnover", val: 4 }
         ],
+        // FINAL WATERFALL ARRAY WITH CORRECTED TEXT AND REBALANCE
         waterfall: [
-            { label: "VDC Investment", val: 3, type: "increase", impact: "pre_construction", desc: "We voluntarily add time here to perfect the model, preventing delays later." },
-            { label: "Layout Speed", val: -12, type: "decrease", impact: "interior_layout", desc: "Layout speed + multi-trade parallelization: installation can start immediately following the robot instead of having to wait for each trade sequentially to lay out the entire floor." },
-            { label: "Parallelization", val: -12, type: "decrease", impact: "mep_rough_in", desc: "Build-Ahead of surrounding systems around critical path items enables parallelization. Equipment delays don't hold up the schedule." },
-            { label: "Reduced Congestion", val: -8, type: "decrease", impact: "mep_rough_in", desc: "Better flow: trades work in zones without stacking, speeding up install." },
-            { label: "Rework Reduction", val: -6, type: "decrease", impact: "mep_rough_in", desc: "Removes the hidden 'tear-out-and-fix' time embedded in the install phase." },
-            { label: "Commissioning De-Risking", val: -5, type: "decrease", impact: "commissioning", desc: "Transforms Commissioning from troubleshooting errors to simple verification." }
+            { label: "VDC Investment", val: 3, type: "increase", impact: "pre_construction", desc: "Investing more time in VDC to gain a more complete model, preventing delays later." },
+            
+            // 2. RAW SPEED - UPDATED TEXT
+            { label: "Robotic Layout Speed", val: -6, type: "decrease", impact: "interior_layout", desc: "Dusty lays out 10x faster than manual teams, directly reducing the raw duration of the Interior Layout phase." },
+            
+            // 3. Multi-Trade Advantage
+            { label: "Multi-Trade Advantage", val: -6, type: "decrease", impact: "interior_layout", desc: "The status quo requires installers to wait until every trade has sequentially marked the entire floor. With Dusty, installation begins as soon as a small section is laid out." },
+
+            // 4. Parallelized Install (VALUE: -6)
+            { label: "Parallelized Install", val: -6, type: "decrease", impact: "mep_rough_in", desc: "Traditionally, you have to wait for *all* equipment to be on site before you can install *anything*. Dusty removes this dependency. You can start installing as soon as parts are available, trusting Dusty's precision to ensure everything fits together later." },
+            
+            // 5. Increased Trade Productivity (VALUE: -5) - CORRECTED TEXT
+            { label: "Increased Trade Productivity", val: -5, type: "decrease", impact: "mep_rough_in", desc: "Maximizing continuous work. Traditional workflows force each trade to visit the site twice: once for layout, and once later for install. During the layout visit, trades install fragmented work to optimize their time, which then obstructs the next team. Multi-trade layout upfront consolidates this into a single visit per trade, eliminating the fragmented work and maximizing efficiency." },
+            
+            // 6. Rework Reduction (VALUE: -15) - CHANGED "small errors" TO "errors"
+            { label: "Rework Reduction", val: -15, type: "decrease", impact: "mep_rough_in", desc: "Stopping costly domino effects. Without accurate layout, errors are often only discovered after multiple trades have built over them. Dusty guarantees correct information upfront, eliminating the massive time and cost required to tear out and rebuild multiple systems." },
+            
+            // 7. Commissioning De-Risking
+            { label: "Commissioning De-Risking", val: -5, type: "decrease", impact: "commissioning", desc: "Commissioning is the final system test, which usually turns into expensive troubleshooting when installation errors are found. Because Dusty eliminates those errors upfront, Commissioning shifts from being a long, risky repair phase to a fast, predictable verification phase." }
         ]
     };
 
